@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>HuntingStats378 - Image Bypass</title>
+  <link rel="icon" href="https://huntingstats378.github.io/HuntingStats378/main/images/logo.png">
+  <link rel=stylesheet href="./index.css">
+  <link rel=stylesheet href="https://huntingstats378.github.io/HuntingStats378/main/assets/ess/odometer1s.css">
+  <script src="https://huntingstats378.github.io/HuntingStats378/main/assets/ess/odometerleading.js"></script>
+  </head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="../">Back</a></li>
+    </ul>
+  </nav>
+  <h1>YouTube Image Bypass</h1>
+        <div id="main" style="border: solid #E65724; padding: 12px; background-color: #141414;">
+          <h3 onclick="search()">Click To Change Image</h3><br>
+          <li><img id="image" src="https://huntingstats378.github.io/HuntingStats378/main/images/logo.png"></li>
+          <li id="id">Image: error</li>
+        </div>
+    </body>
+</html>
+    <script>
+        const searchParams = new URLSearchParams(window.location.search);
+        const id = searchParams.get("id") || "https://huntingstats378.github.io/HuntingStats378/main/images/logo.png";
+        document.getElementById("image").src = id;
+        document.getElementById("id").textContent = `Image: ${id}`;
+
+        function search() {
+            const prompt = window.prompt("Enter image URL.");
+            if (prompt)
+                searchParams.set("id", prompt)
+                    window.location.href = "?" + searchParams.toString()
+        }
+    </script>
