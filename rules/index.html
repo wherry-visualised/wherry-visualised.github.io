@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>WSV - Rules</title>
+        <link rel="icon" href="../code/images/logo.png">
+        <link rel=stylesheet href="../index.css">
+        <link rel=stylesheet href="../code/assets/ess/odometer1s.css">
+        <script src="../code/assets/ess/odometerleading.js"></script>
+        </head>
+      <body>
+        <nav class="navbar">
+          <ul>
+            <li><a href="../">Back</a></li>
+            <li><a href="../googlesheets">Google Sheets</a></li>
+            <li><a href="../changes">Change Log</a></li>
+            <li><div id="date">
+             <span>Clock, Date: </span><span id="years" class="odometer">0000</span><span>-</span><span id="months" class="odometer">00</span><span>-</span><span id="days" class="odometer">00</span>
+            </div>
+              <div id="time">
+              <span id="hours" class="odometer">00</span><span>:</span><span id="minutes" class="odometer">00</span><span>:</span><span id="seconds" class="odometer">00</span>
+              </div></li>
+            <li><a href="../info">Information</a></li>
+            <li><a href="../rules">Rules</a></li>
+        </nav>
+        <h1>Wherry School Visualised</h1>
+        <p>To suggest new updates, ask for help, or report bugs, join the <a style="text-decoration: underline;" href="https://discord.com/invite/uZcuBZ8jww">Wherry School Visualised Discord server</a>. Note that in accordance with Discord's Terms of Service, you have to be over the age of 13 to join.</p>
+        <h2 class="left">Wherry School Visualised Rules</h2>
+        <div id="rules">
+            <h3>These Rules are for all of WSV, Not just for the Website.</h3>
+            <p>1</p>
+            <li>No Racism</li>
+            <p>2</p>
+            <li>No Harassment</li>
+            <dd>banter is fine</dd>
+            <p>3</p>
+            <li>Use common sense</li>
+            <p>4</p>
+            <li>Be Respectful</li>
+            <p>5</p>
+            <li>No Inviting people outside of the Wherry</li>
+            <dd>siblings are fine</dd>
+            <p>6</p>
+            <li>Don't say "Wherry School Visualised" online to non Wherry people</li>
+          <dd>saying "WSV" is fine, just be safe.</dd>
+        </div>
+    </body>
+</html>
+<script>
+  const odometers = document.querySelectorAll(".odometer");
+        for (const odo of odometers) {
+          new Odometer({
+            el: odo,
+            format: "(ddd)",
+            minIntegerLen: 2,
+          });
+        }
+
+  function clock() {
+         const d = new Date();
+
+         // Date
+         var dDate = d.getDate();
+         var dMonth = (d.getMonth() + 1);
+         var dYear = d.getFullYear();
+
+         // Time
+         var tHour = d.getHours();
+         var tMinute = d.getMinutes();
+         var tSecond = d.getSeconds();
+    document.getElementById("years").innerHTML = dYear;
+    document.getElementById("months").innerHTML = dMonth;
+    document.getElementById("days").innerHTML = dDate;
+    document.getElementById("hours").innerHTML = tHour;
+    document.getElementById("minutes").innerHTML = tMinute;
+    document.getElementById("seconds").innerHTML = tSecond;
+     }
+  setInterval(clock, 0);
+</script>
