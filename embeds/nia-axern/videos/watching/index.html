@@ -4,25 +4,25 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width">
       <title>WSV - Embeds</title>
-      <link rel="icon" href="../../../code/images/logo.png">
+      <link rel="icon" href="../../../../code/images/logo.png">
       <link rel=stylesheet href="./index.css">
-      <link rel=stylesheet href="../../../code/assets/ess/odometer1s.css">
-      <script src="../../../code/assets/ess/odometerleading.js"></script>
+      <link rel=stylesheet href="../../../../code/assets/ess/odometer1s.css">
+      <script src="../../../../code/assets/ess/odometerleading.js"></script>
       </head>
     <body>
       <nav class="navbar">
         <ul>
           <li><a href="../">Back</a></li>
-          <li><a href="../../../googlesheets">Google Sheets</a></li>
-          <li><a href="../../../changes">Change Log</a></li>
+          <li><a href="../../../../googlesheets">Google Sheets</a></li>
+          <li><a href="../../../../changes">Change Log</a></li>
           <li><div id="date">
            <span>Clock, Date: </span><span id="years" class="odometer">0000</span><span>-</span><span id="months" class="odometer">00</span><span>-</span><span id="days" class="odometer">00</span>
           </div>
             <div id="time">
             <span id="hours" class="odometer">00</span><span>:</span><span id="minutes" class="odometer">00</span><span>:</span><span id="seconds" class="odometer">00</span>
             </div></li>
-          <li><a href="../../../info">Information</a></li>
-          <li><a href="../../../rules">Rules</a></li>
+          <li><a href="../../../../info">Information</a></li>
+          <li><a href="../../../../rules">Rules</a></li>
       </nav>
       <center>
           <h1 class="title">Wherry School Visualised's Embeds</h1>
@@ -32,7 +32,7 @@
         <a href="https://youtube.com/@HuntingStats378?sub_confirmation=1">
             <h2 style="margin-top: -1vw; text-decoration: underline;">Founder!</h2>
         </a><br>
-          <a href="../../../">
+          <a href="../../../../">
               <h2 style="margin-top: -1vw; text-decoration: underline;">Home!</h2>
     </a>
         </center>
@@ -53,7 +53,7 @@
                         <h1>Change Font Weight</h1>
                     </a>
                     <a onclick="selectid()">
-                        <h1>Change Channel</h1>
+                        <h1>Change Video</h1>
                     </a>
                     <a onclick="selecttype()">
                         <h1>Change Type</h1>
@@ -82,7 +82,7 @@
               const params3 = new URLSearchParams(window.location.search);
               var fa = params3.get("fontalign") || "left";
               const params4 = new URLSearchParams(window.location.search);
-              var id = params4.get("id") || "UCX6OQ3DkcsbYNE6H8uQQuVA";
+              var id = params4.get("id") || "0bhFagWP_W0";
               const params5 = new URLSearchParams(window.location.search);
               var font = params5.get("font") || "Roboto";
             const params6 = new URLSearchParams(window.location.search);
@@ -153,10 +153,10 @@
               }
 
               function selectid() {
-                const prompt = window.prompt("Enter channel name, ID, or URL.");
+                const prompt = window.prompt("Enter video name, ID, or URL.");
                 if (prompt)
                   fetch(
-                    `https://axern.space/api/search?platform=youtube&type=channel&query=${prompt}`
+                    `https://axern.space/api/search?platform=youtube&type=video&query=${prompt}`
                   )
                     .then((res) => res.json())
                     .then((data) => {
