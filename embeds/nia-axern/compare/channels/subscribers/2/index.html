@@ -62,7 +62,8 @@
   const params3 = new URLSearchParams(window.location.search);
   var fa = params3.get("fontalign") || "center";
   const params4 = new URLSearchParams(window.location.search);
-  var id = params4.get("id") || "UCX6OQ3DkcsbYNE6H8uQQuVA";
+  var id1 = params4.get("id1") || "UCX6OQ3DkcsbYNE6H8uQQuVA";
+  var id2 = params9.get("id2") || "UCq-Fj5jknLsUf-MWSy4_brA";
   const params5 = new URLSearchParams(window.location.search);
   var font = params5.get("font") || "Roboto";
   const params6 = new URLSearchParams(window.location.search);
@@ -81,15 +82,21 @@
 
   setInterval(() => {
       fetch(
-        `https://nia-statistics.com/api/get?platform=youtube&type=channel&id=${id}`
+        `https://nia-statistics.com/api/get?platform=youtube&type=channel&id=${id1}`
       )
         .then((res) => res.json())
         .then((data) => {
-
-              document.getElementById("count").innerHTML = data.estSubCount;
+fetch(
+        `https://nia-statistics.com/api/get?platform=youtube&type=channel&id=${id2}`
+      )
+        .then((res) => res.json())
+        .then((data2) => {
+          
+              document.getElementById("count").innerHTML = data.estSubCount - data2.estSubCount;
           document.getElementById("name").textContent = data.snippet.title;
           document.getElementById("image").src = data.snippet.thumbnails.high.url;
                   });
+    });
               }, 2000);
 
   document.documentElement.style.setProperty('--backcolor', bg);
