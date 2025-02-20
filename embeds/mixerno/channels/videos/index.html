@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>WSV - Embeds</title>
+      <link rel="icon" href="../../../../code/images/logo.png">
+      <link rel=stylesheet href="./index.css">
+      <link rel=stylesheet href="../../../../code/assets/ess/odometer1s.css">
+      <script src="../../../../code/assets/ess/odometerleading.js"></script>
+      </head>
+    <body>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../">Back</a></li>
+          <li><a href="../../../../googlesheets">Google Sheets</a></li>
+          <li><a href="../../../../changes">Change Log</a></li>
+          <li><div id="date">
+           <span>Clock, Date: </span><span id="years" class="odometer">0000</span><span>-</span><span id="months" class="odometer">00</span><span>-</span><span id="days" class="odometer">00</span>
+          </div>
+            <div id="time">
+            <span id="hours" class="odometer">00</span><span>:</span><span id="minutes" class="odometer">00</span><span>:</span><span id="seconds" class="odometer">00</span>
+            </div></li>
+          <li><a href="../../../../info">Information</a></li>
+          <li><a href="../../../../rules">Rules</a></li>
+      </nav>
+      <center>
+          <h1 class="title">Wherry School Visualised's Embeds</h1>
+          <a href="https://discord.com/invite/uZcuBZ8jww">
+              <h2 style="margin-top: -1vw; text-decoration: underline;">Click Here To Join The Discord!</h2>
+          </a><br>
+        <a href="https://youtube.com/@HuntingStats378?sub_confirmation=1">
+            <h2 style="margin-top: -1vw; text-decoration: underline;">Founder!</h2>
+        </a><br>
+          <a href="../../../../">
+              <h2 style="margin-top: -1vw; text-decoration: underline;">Home!</h2>
+    </a>
+        </center>
+        <div class="container">
+            <div class="options">
+                <div>
+                    <button>Options</button>
+                    <a onclick="selectbg()">
+                        <h1>Change Background Color</h1>
+                    </a>
+                  <a onclick="selectfc()">
+                      <h1>Change Font/Line Color</h1>
+                    </a>
+                    <a onclick="selectfa()">
+                        <h1>Change Font Position</h1>
+                    </a>
+                    <a onclick="selectfw()">
+                        <h1>Change Font Weight</h1>
+                    </a>
+                    <a onclick="selectid()">
+                        <h1>Change Channel</h1>
+                    </a>
+                    <a onclick="selecttype()">
+                        <h1>Change Type</h1>
+                    </a>
+    <a onclick="selectfont()">
+                        <h1>Change Font</h1>
+                    </a>
+                    <a onclick="selectsize()">
+                        <h1>Change Size</h1>
+                    </a>
+                </div>
+                <div>
+                    <button>Embed Preview (50% Zoom)</button>
+                    <a id="link" target="_blank" href="./">
+                        <h1 style="background-color: #74a7ff; border: solid #01c7fc; font-size: 2vw;">Go To Embed Link</h1>
+                    </a>
+                    <iframe style="border: solid #01c7fc" height="75%" width="98%" id="preview" frameborder="0" src="./1" allowFullScreen></iframe>
+                </div>
+            </div>
+        </div>
+        <script>
+            const params1 = new URLSearchParams(window.location.search);
+              var bg = params1.get("background") || "black";
+              const params2 = new URLSearchParams(window.location.search);
+              var fc = params2.get("fontcolor") || "white";
+              const params3 = new URLSearchParams(window.location.search);
+              var fa = params3.get("fontalign") || "left";
+              const params4 = new URLSearchParams(window.location.search);
+              var id = params4.get("id") || "UCX6OQ3DkcsbYNE6H8uQQuVA";
+              const params5 = new URLSearchParams(window.location.search);
+              var font = params5.get("font") || "Roboto";
+            const params6 = new URLSearchParams(window.location.search);
+              var size = params6.get("size") || "50";
+            const params7 = new URLSearchParams(window.location.search);
+              var fw = params7.get("fontweight") || "400";
+            const params8 = new URLSearchParams(window.location.search);
+              var type = params8.get("type") || "1";
+
+
+            document.getElementById("preview").src = "./" + type + "/?background=" + bg + "&fontcolor=" + fc + "&fontalign=" + fa + "&id=" + id + "&font=" + font + "&size=" + size + "&fontweight=" + fw;
+
+            document.getElementById("link").href = "./" + type + "/?background=" + bg + "&fontcolor=" + fc + "&fontalign=" + fa + "&id=" + id + "&font=" + font + "&size=" + size + "&fontweight=" + fw;
+            function selectbg() {
+                const prompt = window.prompt("Enter background color name, hex code or rgb. (transparent is supported!)");
+                if (prompt)
+                  params1.set("background", prompt)
+                  window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params1.toString()
+                console.log(`Background color set to ${prompt}.`);
+              }
+
+              function selectfc() {
+                const prompt = window.prompt("Enter font color name, hex code or rgb.");
+                if (prompt)
+                  params2.set("fontcolor", prompt)
+                  window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params2.toString()
+                console.log(`Font color set to ${prompt}.`);
+              }
+
+              function selectfa() {
+                const prompt = window.prompt("Enter font alignment direction. (american spelling)");
+                if (prompt)
+                  params3.set("fontalign", prompt)
+                  window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params3.toString()
+                console.log(`Font align set to ${prompt}.`);
+              }
+
+            function selectfont() {
+                const prompt = window.prompt("Enter font name.");
+                if (prompt)
+                  params5.set("font", prompt)
+                  window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params5.toString()
+                console.log(`Font set to ${prompt}.`);
+              }
+
+            function selectsize() {
+                const prompt = window.prompt("Enter size in pixels. (50 default, between 10 and 100 is recomended)");
+                if (prompt)
+                  params6.set("size", prompt)
+                  window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params6.toString()
+                console.log(`Size set to ${prompt}.`);
+              }
+
+            function selectfw() {
+                const prompt = window.prompt("Enter font name.");
+                if (prompt)
+                  params7.set("fontweight", prompt)
+                  window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params7.toString()
+                console.log(`Font weight set to ${prompt}.`);
+              }
+
+            function selecttype() {
+                const prompt = window.prompt("Enter type name.");
+                if (prompt)
+                  params8.set("type", prompt)
+                  window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params8.toString()
+                console.log(`Type set to ${prompt}.`);
+              }
+
+              function selectid() {
+                const prompt = window.prompt("Enter channel name, ID, or URL.");
+                if (prompt)
+                  fetch(
+                    `https://axern.space/api/search?platform=youtube&type=channel&query=${prompt}`
+                  )
+                    .then((res) => res.json())
+                    .then((data) => {
+                      params4.set("id", data[0].id)
+                      window.location.href = "?" + "&" + "&" + "&" + "&" + "&" + "&" + params4.toString()
+                      console.log(`Channel set to ${data[0].id}.`);
+                    });
+              }
+
+  const odometers = document.querySelectorAll(".odometer");
+        for (const odo of odometers) {
+          new Odometer({
+            el: odo,
+            format: "(ddd)",
+            minIntegerLen: 2,
+          });
+        }
+
+  function clock() {
+         const d = new Date();
+
+         // Date
+         var dDate = d.getDate();
+         var dMonth = (d.getMonth() + 1);
+         var dYear = d.getFullYear();
+
+         // Time
+         var tHour = d.getHours();
+         var tMinute = d.getMinutes();
+         var tSecond = d.getSeconds();
+    document.getElementById("years").innerHTML = dYear;
+    document.getElementById("months").innerHTML = dMonth;
+    document.getElementById("days").innerHTML = dDate;
+    document.getElementById("hours").innerHTML = tHour;
+    document.getElementById("minutes").innerHTML = tMinute;
+    document.getElementById("seconds").innerHTML = tSecond;
+     }
+  setInterval(clock, 0);
+</script>

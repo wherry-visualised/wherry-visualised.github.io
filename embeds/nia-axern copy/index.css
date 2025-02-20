@@ -1,0 +1,73 @@
+body {
+    background-color: #3a87fe;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    color: #FFF;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+h1 {
+    background-color: #74a7ff;
+    border: solid #01c7fc;
+    font-size: 2vw;
+}
+
+div {
+    width: 100%;
+}
+
+.options {
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+
+button {
+    font-size: 1.8vw;
+    width: 100%;
+}
+
+.title {
+   font-size: 5vw; 
+}
+
+.navbar {
+  font-family: arial;
+  font-weight: 700;
+  color: white;
+  font-size: 2.9vw;
+}
+
+.navbar ul {
+  list-style-type: none;
+  background-color: #74a7ff;
+  border: solid #01c7fc;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: underline;
+  padding: 1vw;
+  display: block;
+  text-align: center;
+}
+
+.navbar li {
+  float: left;
+}
+
+#date {
+  font-size: 1.1vw;
+  text-align: center;
+}
+
+#time {
+  font-size: 3.6vw;
+  text-align: center;
+}
